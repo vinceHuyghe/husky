@@ -78,10 +78,10 @@ def generate_launch_description():
         [FindPackageShare("husky_control"), 'launch', 'teleop_joy.launch.py'])))
 
 
-    # Launch husky_bringup/accessories.launch.py which is the sensors commonly used on the Husky.
-    launch_husky_accessories = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(PathJoinSubstitution(
-        [FindPackageShare("husky_bringup"), 'launch', 'accessories.launch.py'])))
+    # # Launch husky_bringup/accessories.launch.py which is the sensors commonly used on the Husky.
+    # launch_husky_accessories = IncludeLaunchDescription(
+    #     PythonLaunchDescriptionSource(PathJoinSubstitution(
+    #     [FindPackageShare("husky_bringup"), 'launch', 'accessories.launch.py'])))
 
 
     ld = LaunchDescription()
@@ -92,6 +92,6 @@ def generate_launch_description():
     ld.add_action(launch_husky_control)
     ld.add_action(launch_husky_teleop_base)
     ld.add_action(launch_husky_teleop_joy)
-    ld.add_action(launch_husky_accessories)
+    # ld.add_action(launch_husky_accessories)
 
     return ld
